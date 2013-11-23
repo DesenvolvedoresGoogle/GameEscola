@@ -86,7 +86,7 @@ if ( is_user_logged_in() && is_home() ) {
                             data-clientid="310116777262-i5sbrk09gusp949ecfiuimgehenp4vi3.apps.googleusercontent.com"
                             data-cookiepolicy="single_host_origin"
                             data-requestvisibleactions="http://schemas.google.com/AddActivity"
-                            data-scope="https://www.googleapis.com/auth/plus.login">
+                            data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email">
                             </span>
                         </span>
 					</div>

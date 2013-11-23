@@ -21,6 +21,36 @@
     // Update the app to reflect a signed in user
     // Hide the sign-in button now that the user is authorized, for example:
     document.getElementById('signinButton').setAttribute('style', 'display: none');
+
+
+    gapi.client.load('plus','v1', function(){
+        var request = gapi.client.plus.people.get({
+            'userId': 'me'
+        });
+        request.execute(function(resp) {
+            console.log('Retrieved profile for:' + resp.displayName);
+            console.log(resp);
+
+            $.post(
+                '/wp-content/themes/gamescola/signplus.php',
+                {
+                    /*'first_name': resp.*/
+                }
+                function(data, textStatus, xhr) {
+                /*optional stuff to do after success */
+            });
+
+            $.ajax({
+                type: "POST",
+                url: '/wp-content/themes/gamescola/signplus.php',
+                data: ,
+                success: success,
+                dataType: dataType
+            });
+
+        });
+    });
+
 } else if (authResult['error']) {
     // Update the app to reflect a signed out user
     // Possible error values:

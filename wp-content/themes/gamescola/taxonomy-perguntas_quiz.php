@@ -29,41 +29,41 @@ get_header();
 		<section class="answ">
 			<section class="slide-int">
 				<ul class="bxslider">
-					<li class="instrucoes"><?php echo term_description(); ?></li>
-					<li class="iniciar_jogo">
-						<img src="<?php bloginfo('template_url'); ?>/images/abelha_big.png" alt="Iniciar Jogo" />
-						<span>inicar jogo <i class="fa fa-arrow-right"></i></span>
+					<li>
+						<div class="instrucoes"><?php echo term_description(); ?></div>
+						<div class="iniciar_jogo">
+							<img src="<?php bloginfo('template_url'); ?>/images/abelha_big.png" alt="Iniciar Jogo" />
+							<span>inicar jogo <i class="fa fa-arrow-right"></i></span>
+						</div>
 					</li>
 					
 					<?php if (have_posts()) : ?>
 					<?php while (have_posts()) : the_post(); $id = get_the_id(); ?>
-					
+					<li class='pergunta_item' id="item_<?php echo $id; ?>" data-title="<?php echo get_the_title(); ?>">
 					<?php
 					$images = rwmb_meta( 'quiz_images', 'type=image' );
 					foreach ( $images as $image ){
-					    echo "<li class='pergunta_item' id='item_".$id."' data-title='".get_the_title()."'><img src='".$image['full_url']."' alt='".$image['alt']."' /></li>";
-					}
 					?>
-					
+						<img src="<?php echo $image['full_url']; ?>" alt="<?php echo $image['alt']; ?>" />
+					<?php }	?>
+					</li>
 					<?php endwhile; ?>
-					<li class="medals">
-						<!--<div class="top-ranking">
-							<div class="large-2 columns"><img src="<?php bloginfo('template_url'); ?>/images/bee.png" alt="Imagem de som" /></div>
-							<div class="large-10 columns"><h3>Você ganhou 5 abelhas!</h3></div>
-						</div>-->
-						<section class="large-4 columns medal-awd">
+					
+					<li class="ranking">
+						<div class="person">
 							<img src="<?php bloginfo('template_url'); ?>/images/bee.png" alt="Imagem de som" />
 							<h3>Tiago Nicastro</h3>
-						</section>
-						<section class="large-4 columns medal-awd">
+						</div>
+						<div class="person">
 							<img src="<?php bloginfo('template_url'); ?>/images/bee.png" alt="Imagem de som" />
-							<h3>Hussani Oliveira</h3>
-						</section>
-						<section class="large-4 columns medal-awd">
+							<h3>Tiago Nicastro</h3>
+						</div>
+						<div class="person">
 							<img src="<?php bloginfo('template_url'); ?>/images/bee.png" alt="Imagem de som" />
-							<h3>Silvia Rodrigues</h3>
-						</section>
+							<h3>Tiago Nicastro</h3>
+						</div>
 					</li>
+
 					<?php else : ?>
 					<li><img src="<?php bloginfo('template_url'); ?>/images/rectangle.png" alt="Figura geométrica com quatro lados" /></li>
 					<?php endif; ?>

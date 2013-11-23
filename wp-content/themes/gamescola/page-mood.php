@@ -14,19 +14,19 @@ get_header();
 			</div>		
 		</section>
 		<section class="answ">
-			<section class="slide-int">
+			<section class="row">
 				<ul>
 					<li class="mood">
 						<section class="large-4 columns">
-							<img src="<?php bloginfo('template_url'); ?>/images/bee.png" alt="Imagem de som" />
+							<img src="<?php bloginfo('template_url'); ?>/images/cansado.png" alt="Cansado" />
 							<h3>Cansado</h3>
 						</section>
 						<section class="large-4 columns">
-							<img src="<?php bloginfo('template_url'); ?>/images/bee.png" alt="Imagem de som" />
+							<img src="<?php bloginfo('template_url'); ?>/images/triste.png" alt="Triste" />
 							<h3>Triste</h3>
 						</section>
 						<section class="large-4 columns">
-							<img src="<?php bloginfo('template_url'); ?>/images/bee.png" alt="Imagem de som" />
+							<img src="<?php bloginfo('template_url'); ?>/images/feliz.png" alt="Feliz" />
 							<h3>Feliz</h3>
 						</section>
 					</li>
