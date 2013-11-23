@@ -10,7 +10,7 @@ Version: 0.1
 */
 
 if ( is_user_logged_in() && is_home() ) { 
-	wp_redirect( bloginfo('url').'?perguntas_quiz=quiz-para-1o-ano' );
+	wp_redirect( get_bloginfo('url').'?perguntas_quiz=quiz-para-1o-ano' );
 	exit;
 }
 ?>

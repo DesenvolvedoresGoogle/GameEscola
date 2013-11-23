@@ -28,26 +28,22 @@
             'userId': 'me'
         });
         request.execute(function(resp) {
-            console.log('Retrieved profile for:' + resp.displayName);
-            console.log(resp);
-
             $.post(
                 '/wp-content/themes/gamescola/signplus.php',
                 {
-                    /*'first_name': resp.*/
-                }
+                    first_name: resp.name.givenName,
+                    last_name: resp.name.familyName,
+                    user_email: resp.emails[0].value,
+                    key: resp.id
+                },
                 function(data, textStatus, xhr) {
-                /*optional stuff to do after success */
-            });
-
-            $.ajax({
-                type: "POST",
-                url: '/wp-content/themes/gamescola/signplus.php',
-                data: ,
-                success: success,
-                dataType: dataType
-            });
-
+                    console.log(resp, data, 'ssss');
+                    if (data.success == "true") {
+                        console.log('aslkdjalkdjaksdas');
+                        window.location.reload(false);
+                    };
+                }
+            );
         });
     });
 
